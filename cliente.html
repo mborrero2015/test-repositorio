@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad EAN &copy;</title>
+</head>
+<body>
+    <form action="">
+        <div>
+            <label for="">Documento</label>
+            <input id="txtDocumento" type="text" required autofocus maxlength="15">
+        </div>
+        <div>
+            <label for="">Nombre</label>
+            <input id="txtNombre" type="text" required maxlength="50">
+        </div>
+        <div>
+            <label for="">Dirección</label>
+            <input type="text">
+        </div>
+        <div>
+            <label for="">Correo</label>
+            <input type="email">
+        </div>
+        <div>
+            <label for="">Fecha nacimiento</label>
+            <input type="date">
+        </div>
+        <div>
+            <label for="">Hijos</label>
+            <input type="number" min="0" max="30">
+        </div>
+        <div>
+            <label for="">Teléfono</label>
+            <input type="tel" minlength="6" maxlength="15">
+        </div>
+        <div>
+            <input type="button" value="Guardar" onclick="agregarCliente()">
+            <input type="button" value="Consultar" onclick="obtenerCliente()">
+            <input type="button" value="Listar" onclick="listarCliente()">
+        </div>
+    </form>
+    <div id="lista">
+
+    </div>
+</body>
+<script>
+    var cliente = [];
+    function agregarCliente() {
+        cliente[0] = document.getElementById("txtDocumento").value;
+        cliente[1] = document.getElementById("txtNombre").value;
+    }
+
+    function obtenerCliente() {
+        document.getElementById("txtDocumento").value = cliente[0];
+        document.getElementById("txtNombre").value = cliente[1];
+    }
+    // function listarCliente() Sin parámetros
+    // function listarCliente(a) Con parámetro obligatorio
+    // function listarCliente(a = 7) Parametros opcionales
+    function listarCliente(...args) {
+        let lista = document.getElementById("lista");
+        for (let c of cliente) {
+            lista.append(c);
+        }
+        
+    }
+</script>
+</html>

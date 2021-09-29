@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | kinnova &copy;</title>
+</head>
+
+<body>
+    <form action="">
+        <div>
+            <label for="user">Username</label>
+            <input id="user" type="text" required autocomplete="off" autofocus>
+        </div>
+        <div>
+            <label for="pass">Password</label>
+            <input id="pass" type="password" required>
+        </div>
+        <div>
+            <input type="button" value="Entrar" onclick="login()">
+        </div>
+    </form>
+</body>
+<script>
+    // Función para loguear
+    function login() {
+        let user = document.getElementById("user").value;
+        let pass = document.getElementById("pass").value;
+        if (user == "admin" && pass == "123") {
+            // Redirecciona hacia la página cliente.html
+            location.href = "cliente.html";
+        } else {
+            alert("Usuario / Password inválidos")
+        }
+    }
+    
+</script>
+
+</html>
